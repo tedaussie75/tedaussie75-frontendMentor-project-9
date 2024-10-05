@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+picture .pattern-top,
+picture .pattern-bottom {
+    position: absolute;
+    z-index: 1;
+}
+
+picture .pattern-top {
+    top: 0;
+    left: 0;
+}
+
+picture .pattern-bottom {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+ul {
+    list-style: none;
+}
+
+div.page-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1000px;
+}
+
+div.page-container .text-products,
+div.page-container .rating-products {
+    flex: 1;
+}
+
+div.page-container .rating-products .rating-container,
+div.page-container .rating-products .rating-container ul {
+    display: flex;
+}
+
+div.page-container .rating-products .rating-container {
+    align-items: center;
+    max-width: 375px;
+    padding: 15px 30px;
+    background-color: var(--light-grayish-magenta);
+    border-radius: 10px;
+}
+
+div.page-container .rating-products .rating-container:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+div.page-container .rating-products .rating-container ul {
+    gap: 10px;
+}
+
+div.page-container .rating-products .rating-container ul li {
+    height: 18px;
+    width: 18px;
+}
+
+div.page-container .rating-products .rating-container ul li img {
+    width: 100%;
+}
+
+div.page-container .rating-products .rating-container p {
+    font-size: 16px;
+    margin-left: 40px;
+    color: var(--very-dark-magenta);
+    font-weight: bold;
+}
+
+div.page-container .text-products h1 {
+    font-size: 50px;
+    width: 70%;
+    color: var(--very-dark-magenta);
+    margin-bottom: 20px;
+}
+
+div.page-container .text-products p {
+    width: 70%;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--dark-grayish-magenta);
+}
+div.page-container .review-products {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    margin-top: 80px;
+}
+div.page-container .review-products .review-card {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    background-color: var(--very-dark-magenta);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+div.page-container .review-products .review-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+div.page-container .review-products .review-card h2,
+div.page-container .review-products .review-card p {
+    color: var(--light-grayish-magenta);
+}
+
+div.page-container .review-products .review-card h2,
+div.page-container .review-products .review-card p,
+div.page-container .review-products .review-card h3 {
+    font-size: 16px;
+}
+
+div.page-container .review-products .review-card h3 {
+    margin-top: 5px;
+    color: var(--soft-pink);
+}
+
+div.page-container .review-products .review-card p {
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+div.page-container .review-products img {
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1040px) {
+    body p,
+    .avatar-infos h2,
+    .avatar-infos h3 {
+        font-size: 18px !important;
+    }
+
+    div.page-container {
+        max-width: 375px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        margin: 100px 0;
+    }
+
+    div.page-container section.text-products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    div.page-container .text-products h1,
+    div.page-container .text-products p {
+        width: 100%;
+    }
+
+    div.page-container .text-products p {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    div.page-container .rating-products {
+        width: 100%;
+    }
+
+    div.page-container .rating-products .rating-container {
+        align-items: center;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    div.page-container .rating-products .rating-container ul li img {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    div.page-container .rating-products .rating-container p {
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: unset;
+    }
+
+    div.page-container .review-products {
+        margin-top: 60px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    div.page-container .review-products .review-card {
+        padding: 40px;
+    }
+}
+
+@media screen and (min-width: 1040px) {
+    div.page-container .rating-container:nth-child(2) {
+        margin-left: 40px;
+    }
+
+    div.page-container .rating-container:nth-child(3) {
+        margin-left: 80px;
+    }
+
+    div.page-container .review-products .review-card:nth-child(2) {
+        margin-top: 20px;
+    }
+
+    div.page-container .review-products .review-card:nth-child(3) {
+        margin-top: 40px;
+    }
+}
